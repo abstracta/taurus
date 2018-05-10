@@ -2,6 +2,7 @@
 skip_branch_with_pr: true
 
 environment:
+  PIP_DEFAULT_TIMEOUT: 120
   matrix:
     - PYTHON: "C:\\Python35"
       PYTHON_VERSION: "3.5.x"
