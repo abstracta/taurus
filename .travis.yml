@@ -19,6 +19,12 @@ env:
   - DISPLAY=:99.0
   - PIP_INSTALL="pip install"
   - GENERAL_EXCLUDE="--exclude-dir=tests/resources --exclude-dir=tests/ci"
+  - PIP_FIND_LINKS=file://$HOME/.cache/pip
+  - PIP_CACHE_DIR=$HOME/.cache/pip
+
+cache:
+  directories:
+    - $HOME/.cache/pip
 
 matrix:
   include:
