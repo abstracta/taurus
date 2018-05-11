@@ -1,6 +1,9 @@
 # Do not build feature branch with open Pull Requests
 skip_branch_with_pr: true
 
+cache:
+  - '%LOCALAPPDATA%\pip\Cache'
+  
 environment:
   matrix:
     - PYTHON: "C:\\Python35"
