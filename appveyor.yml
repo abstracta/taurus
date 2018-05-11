@@ -8,7 +8,7 @@ cache:
   - C:\ProgramData\chocolatey\lib -> appveyor.yml  # chocolatey cache
   - node_modules                  -> appveyor.yml  # local npm modules
   - '%APPDATA%\npm-cache'         -> appveyor.yml  # npm cache
-  
+
 environment:
   matrix:
     - PYTHON: "C:\\Python35"
