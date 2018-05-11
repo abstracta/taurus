@@ -1,6 +1,14 @@
 # Do not build feature branch with open Pull Requests
 skip_branch_with_pr: true
 
+cache:
+  - vendor/bundle
+  - packages -> appveyor.yml    # or any other file
+  - C:\ProgramData\chocolatey\bin -> appveyor.yml  # chocolatey app
+  - C:\ProgramData\chocolatey\lib -> appveyor.yml  # chocolatey cache
+  - node_modules                  -> appveyor.yml  # local npm modules
+  - '%APPDATA%\npm-cache'         -> appveyor.yml  # npm cache
+  
 environment:
   matrix:
     - PYTHON: "C:\\Python35"
@@ -16,6 +24,7 @@ platform:
   - x64
 
 install:
+  - bundle config --local path vendor/bundle
   - choco install firefox --version 57.0.4
   - ps: Install-Product node $env:NODEJS_VERSION
   - "%PYTHON%\\python.exe -m pip install pip wheel --upgrade"
