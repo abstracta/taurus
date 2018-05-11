@@ -6,8 +6,8 @@ cache:
   
 environment:
   global:
-    PIP_FIND_LINKS: file://%LOCALAPPDATA%/pip/Cache
-    PIP_CACHE_DIR: %LOCALAPPDATA%\pip\Cache
+    PIP_FIND_LINKS: 'file://%LOCALAPPDATA%/pip/Cache'
+    PIP_CACHE_DIR: '%LOCALAPPDATA%\pip\Cache'
   matrix:
     - PYTHON: "C:\\Python35"
       PYTHON_VERSION: "3.5.x"
