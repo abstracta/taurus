@@ -7,7 +7,9 @@ cache:
   - C:\ProgramData\chocolatey\bin -> appveyor.yml  # chocolatey app
   - C:\ProgramData\chocolatey\lib -> appveyor.yml  # chocolatey cache
   - node_modules                                   # local npm modules
-
+  - '%LOCALAPPDATA%\pip\Cache\http'
+  - '%LOCALAPPDATA%\pip\Cache\wheels'
+  
 environment:
   matrix:
     - PYTHON: "C:\\Python35"
@@ -23,6 +25,7 @@ platform:
   - x64
 
 install:
+  - C:\cygwin\bin\du -hs "%LOCALAPPDATA%\pip\Cache"
   - bundle config --local path vendor/bundle
   - choco install firefox --version 57.0.4
   - ps: Install-Product node $env:NODEJS_VERSION
