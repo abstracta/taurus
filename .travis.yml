@@ -21,7 +21,7 @@ env:
   - GENERAL_EXCLUDE="--exclude-dir=tests/resources --exclude-dir=tests/ci"
   - PIP_FIND_LINKS=file://$HOME/.cache/pip
   - PIP_CACHE_DIR=$HOME/.cache/pip
-  - NOSE_PROCESSES=-1
+  - NOSE_PROCESSES=0
 
 cache:
   directories:
