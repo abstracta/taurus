@@ -7,7 +7,6 @@ cache:
   - C:\ProgramData\chocolatey\bin -> appveyor.yml  # chocolatey app
   - C:\ProgramData\chocolatey\lib -> appveyor.yml  # chocolatey cache
   - node_modules                                   # local npm modules
-  - '%APPDATA%\npm-cache'         -> appveyor.yml  # npm cache
 
 environment:
   matrix:
