@@ -641,7 +641,7 @@ import selenium_taurus_extras
                 drag_element = tpl % (bys[tag], selector)
                 drop_element = tpl % (bys[drop_tag], drop_selector)
                 action_elements.append(self.gen_statement(
-                        "ActionChains(self.driver).%s(%s, %s).perform()" % (action, drag_element, drop_element),
+                        "selenium_taurus_extras.%s(self.driver, %s, %s)" % (action, drag_element, drop_element),
                         indent=indent))
         elif atype == 'select':
             tpl = "self.driver.find_element(By.%s, _tpl.apply(%r))"
